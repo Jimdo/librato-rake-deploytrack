@@ -1,6 +1,8 @@
 # Librato Rake Deploytrack
 Rake tasks to keep track of your deploys in Librato Metrics, using the annotations streams!
 
+[![Build Status](http://static.squarespace.com/static/5141f98de4b01238136e109c/5141fb8ce4b0253264ed19af/5141fb8fe4b0253264ed1a12/1363278744208/?format=750w)](http://blog.librato.com/posts/2012/09/annotations)
+
 ## Installation
 Librato Rake Deploytrack is a collection of raketasks. So you should be able to include them in every application utilizing rake.
 
