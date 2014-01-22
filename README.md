@@ -7,7 +7,7 @@ Rake tasks to keep track of your deploys in Librato Metrics, using the annotatio
 Librato Rake Deploytrack is a collection of raketasks. So you should be able to include them in every application utilizing rake.
 
 Add this gem to your `Gemfile`
-```bash
+```ruby
 gem 'librato-rake-deploytrack'
 ```
 
@@ -20,7 +20,7 @@ Your done. Librato Rake Deploytrack hooks automatically into rake.
 
 To use Librato Rake Deploytrack without Rails simply require it in your `Rakefile`
 
-```
+```ruby
 require 'librato-rake-deploytrack'
 ```
 
@@ -39,7 +39,7 @@ All configuration is done via environment variables. There are four thing you ca
 
 Librato Rake Deploytrack should be pretty simple to integrate into your deploy process. You just have to wrap your actual deploy call with the two rake tasks. Here is a small example
 
-```
+```bash
 #scripts/my_deploy.sh
 rake librato:deploy:start['Deploy v47', 'This deploy fixes #63 #67 #74 and also improves performance']
 git push heroku master
