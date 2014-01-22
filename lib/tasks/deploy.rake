@@ -11,8 +11,8 @@ namespace :librato do
   namespace :deploy do
 
     desc "Mark a deployment start in librato metrics annotations streams"
-    task :start, :name, :description do |task, args|
-      r = Librato::Metrics.annotate :deployments, args[:name], :source => source, :start_time => Time.now.to_i, :description => args[:description]
+    task :start, :title, :description do |task, args|
+      r = Librato::Metrics.annotate :deployments, args[:title], :source => source, :start_time => Time.now.to_i, :description => args[:description]
       File.open(file, 'w') { |file| file.write r['id'] }
     end
 
