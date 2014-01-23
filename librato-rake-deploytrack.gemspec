@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Ole Michaelis"]
   s.email       = 'Ole.Michaelis@googlemail.com'
   s.files       = Dir['lib/*.rb'] + Dir['lib/tasks/*/.rake']
-  s.homepage    = 'http://rubygems.org/gems/librato-rake-deploytrack'
+  s.homepage    = 'https://github.com/Jimdo/librato-rake-deploytrack'
   s.license     = 'MIT'
 
   s.add_runtime_dependency "rake", "~> 10.1"
