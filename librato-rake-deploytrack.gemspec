@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = s.summary
   s.authors     = ["Ole Michaelis"]
   s.email       = 'Ole.Michaelis@googlemail.com'
-  s.files       = 'lib/librato-rake-deploytrack.rb'
+  s.files       = Dir['lib/*.rb'] + Dir['lib/tasks/*/.rake']
   s.homepage    = 'http://rubygems.org/gems/librato-rake-deploytrack'
   s.license     = 'MIT'
 
