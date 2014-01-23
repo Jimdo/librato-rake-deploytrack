@@ -51,6 +51,29 @@ As you see the `librato:deploy:start` takes two arguments:
  * `title` The title of an annotation is a string and may contain spaces. The title should be a short, high-level summary of the annotation e.g. v45 Deployment. The title is a required parameter to create an annotation.
  * `description` The description contains extra meta-data about a particular annotation. The description should contain specifics on the individual annotation e.g. Deployed 9b562b2: shipped new feature foo! A description is not required to create an annotation.
 
+### Usage in Travis CI
+
+You have a `before_deploy` and a `after_deploy` run level you can use like this
+
+```yaml
+before_deploy:
+  - rake librato:deploy:start["deploy $TRAVIS_REPO_SLUG","Travis deployed https://github.com/<your-org>/<your-repo>/compare/$TRAVIS_COMMIT_RANGE"]
+after_deploy:
+  - rake librato:deploy:end
+```
+
+Using this gem in Travis CI deployment has a few pitfalls. First of all it requires your user and token in the environment. You can solve the non-that-secret user with a [global environment variable](http://docs.travis-ci.com/user/build-configuration/#Set-environment-variables) but to keep your token secret it's highly recommended to [encrypt it](http://docs.travis-ci.com/user/encryption-keys/)! Here is a example how a environment config could look like. 
+
+```yaml
+env:
+  global:
+    - LIBRATO_USER=user@example.com
+    - secure: "SJXa[...just...a...bunch...of...chars...]e5uofDKs="
+```
+
+*this one depends on the deployment provider you are using*
+One last thing to solve. Travis usually cleans up your repo before deploying, that would mean that the state-keeping-file would also be deleted. To avoid this you should skip the cleaning. With heroku you can do it with the `skip_cleanup: true` parameter.
+
 ## Contribute
 
 1. Fork
