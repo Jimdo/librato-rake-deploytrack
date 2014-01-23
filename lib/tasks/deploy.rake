@@ -24,12 +24,11 @@ namespace :librato do
       File.delete(file) 
     end
 
-#    desc "List annotations"
-#    task :list do
-#      annotator = Librato::Metrics::Annotator.new
-#      p annotator.fetch_event :deployments, File.read(file).to_i if File.exists?(file)
-#      p annotator.fetch :deployments
-#    end
+    task :list do
+      annotator = Librato::Metrics::Annotator.new
+      p annotator.fetch_event :deployments, File.read(file).to_i if File.exists?(file)
+      p annotator.fetch :deployments
+    end
 
   end
 end
