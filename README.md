@@ -13,8 +13,9 @@ gem 'librato-rake-deploytrack'
 
 ### Installation (Rails 4.x)
 
-Nothing \o/
-Your done. Librato Rake Deploytrack hooks automatically into rake.
+Nothing *\o/*
+
+Librato Rake Deploytrack hooks automatically into rake.
 
 ### Installation w/o Rails
 
@@ -49,7 +50,7 @@ rake librato:deploy:end
 As you see the `librato:deploy:start` takes two arguments:
 
  * `title` The title of an annotation is a string and may contain spaces. The title should be a short, high-level summary of the annotation e.g. v45 Deployment. The title is a required parameter to create an annotation.
- * `description` The description contains extra meta-data about a particular annotation. The description should contain specifics on the individual annotation e.g. Deployed 9b562b2: shipped new feature foo! A description is not required to create an annotation.
+ * `description` The description contains extra meta-data about a particular annotation. The description should contain specifics on the individual annotation e.g. Deployed 9b562b2: shipped new feature foo!
 
 ### Usage in Travis CI
 
@@ -71,8 +72,7 @@ env:
     - secure: "SJXa[...just...a...bunch...of...chars...]e5uofDKs="
 ```
 
-*this one depends on the deployment provider you are using*
-One last thing to solve. Travis usually cleans up your repo before deploying, that would mean that the state-keeping-file would also be deleted. To avoid this you should skip the cleaning. With heroku you can do it with the `skip_cleanup: true` parameter.
+*this one might depend on the deployment provider you are using.* Travis usually cleans up your repo before deploying, that would result in the state-keeping-file be deleted. To avoid this you should skip the cleaning. With heroku you can do it with the `skip_cleanup: true` parameter.
 
 ## Contribute
 
@@ -80,8 +80,7 @@ One last thing to solve. Travis usually cleans up your repo before deploying, th
 2. Hack away
 3. Send PR
 
-Really. That's it.
-No fancy shitty overhead. But you could write tests if you like <3
+Really. That's it. No fancy shitty overhead. But you could write tests if you like <3
 
 ## License
 
