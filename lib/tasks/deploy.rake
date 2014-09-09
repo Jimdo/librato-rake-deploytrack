@@ -4,7 +4,7 @@ user            = ENV['LIBRATO_USER'] || ENV['LIBRATO_METRICS_USER']
 token           = ENV['LIBRATO_TOKEN'] || ENV['LIBRATO_METRICS_TOKEN']
 source          = ENV['LIBRATO_SOURCE'] || ENV['LIBRATO_METRICS_SOURCE'] || 'production'
 file            = ENV['LIBRATO_DEPLOY_FILE'] ||'librato-rake-deploytrack-deploy-id'
-deployment_name = ENV['LIBRATO_DEPLOYMENT_ANNOTATION'].to_sym || :deployments
+deployment_name = ENV['LIBRATO_DEPLOYMENT_ANNOTATION'] && ENV['LIBRATO_DEPLOYMENT_ANNOTATION'].to_sym || :deployments
 
 Librato::Metrics.authenticate user, token
 
